@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -9,71 +9,104 @@
 
   <style>
     :root {
-      --primary: #0f766e;
-      --primary-dark: #115e59;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --bg: #f8fafc;
+      --bg: #f6f8fb;
       --card: #ffffff;
-      --border: #e5e7eb;
+      --text: #172033;
+      --muted: #64748b;
+      --primary: #0f766e;
+      --line: #e5e7eb;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.75;
     }
 
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #ffffff;
-      padding: 40px 20px;
+    .hero {
+      padding: 56px 20px 36px;
       text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
     }
 
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 32px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      border-radius: 999px;
+      color: var(--primary);
+      background: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
-    header p {
+    .hero h1 {
       margin: 0;
-      font-size: 16px;
-      opacity: 0.95;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
     }
 
-    main {
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 0 20px 40px;
+    .hero p {
+      max-width: 680px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .container {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto 56px;
     }
 
     .card {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(22px, 4vw, 44px);
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.07);
+    }
+
+    .updated {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .intro {
+      font-size: 17px;
+      color: #334155;
+      margin-bottom: 26px;
     }
 
     h2 {
-      color: var(--primary-dark);
-      margin-top: 34px;
-      margin-bottom: 12px;
-      font-size: 22px;
+      margin: 34px 0 10px;
+      padding-top: 8px;
+      font-size: 21px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: #0f172a;
     }
 
     h3 {
-      color: #111827;
-      margin-top: 22px;
-      margin-bottom: 8px;
-      font-size: 18px;
+      margin: 22px 0 8px;
+      font-size: 16px;
+      color: var(--primary);
     }
 
     p {
@@ -81,315 +114,270 @@
     }
 
     ul {
-      margin-top: 8px;
-      margin-bottom: 18px;
-      padding-left: 24px;
+      margin: 8px 0 18px;
+      padding-left: 20px;
     }
 
     li {
       margin-bottom: 6px;
     }
 
-    .updated {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
-
-    .contact-box {
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      border-radius: 12px;
-      padding: 18px;
+    .contact {
       margin-top: 16px;
+      padding: 20px;
+      border-radius: 18px;
+      background: #f0fdfa;
+      border: 1px solid #ccfbf1;
     }
 
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      padding: 24px 20px 40px;
+    .contact p {
+      margin-bottom: 6px;
     }
 
     a {
-      color: var(--primary-dark);
+      color: var(--primary);
       text-decoration: none;
+      font-weight: 600;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
+    footer {
+      padding: 0 20px 36px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     @media (max-width: 640px) {
-      header {
-        padding: 32px 16px;
+      .hero {
+        padding-top: 40px;
       }
 
-      header h1 {
-        font-size: 26px;
+      .container {
+        width: min(100% - 24px, 920px);
+        margin-bottom: 36px;
       }
 
       .card {
-        padding: 20px;
-      }
-
-      h2 {
-        font-size: 20px;
+        border-radius: 18px;
       }
     }
   </style>
+
 </head>
 
 <body>
-  <header>
+  <header class="hero">
+    <div class="badge">RSC Online · RSUD Cideres</div>
     <h1>Kebijakan Privasi</h1>
-    <p>Aplikasi RSC Online - RSUD Cideres</p>
+    <p>
+      Informasi mengenai pengumpulan, penggunaan, penyimpanan, dan perlindungan
+      data pengguna aplikasi RSC Online.
+    </p>
   </header>
 
-  <main>
-    <section class="card">
+  <main class="container">
+    <article class="card">
       <p class="updated"><strong>Terakhir diperbarui:</strong> 3 Juni 2026</p>
 
-      <p>
-        Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>RSC Online</strong>
-        yang dikelola oleh <strong>RSUD Cideres</strong> mengumpulkan, menggunakan,
-        menyimpan, dan melindungi data pengguna dalam rangka penyediaan layanan
-        pendaftaran rawat jalan, informasi jadwal dokter, antrean online, e-ticket,
-        kartu pasien digital, rujukan, surat kontrol, serta notifikasi layanan rumah sakit.
-      </p>
+```
+  <p class="intro">
+    Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>RSC Online</strong>
+    yang dikelola oleh <strong>RSUD Cideres</strong> mengelola data pengguna untuk
+    mendukung layanan pendaftaran rawat jalan, jadwal dokter, antrean online,
+    e-ticket, kartu pasien digital, rujukan, surat kontrol, dan notifikasi layanan.
+  </p>
 
-      <p>
-        Dengan menggunakan aplikasi RSC Online, pengguna dianggap telah membaca,
-        memahami, dan menyetujui ketentuan dalam Kebijakan Privasi ini.
-      </p>
+  <p>
+    Dengan menggunakan aplikasi RSC Online, pengguna dianggap telah membaca,
+    memahami, dan menyetujui Kebijakan Privasi ini.
+  </p>
 
-      <h2>1. Informasi yang Kami Kumpulkan</h2>
+  <h2>1. Informasi yang Kami Kumpulkan</h2>
 
-      <h3>a. Data Identitas Pasien</h3>
-      <p>Data yang dapat dikumpulkan meliputi:</p>
-      <ul>
-        <li>Nama pasien</li>
-        <li>Nomor rekam medis</li>
-        <li>Nomor kartu pasien</li>
-        <li>Nomor identitas, apabila diperlukan</li>
-        <li>Tanggal lahir</li>
-        <li>Nomor telepon</li>
-        <li>Informasi kepesertaan BPJS, apabila digunakan untuk layanan terkait BPJS</li>
-        <li>Informasi rujukan atau surat kontrol, sesuai kebutuhan layanan</li>
-      </ul>
+  <h3>Data identitas pasien</h3>
+  <ul>
+    <li>Nama pasien</li>
+    <li>Nomor rekam medis</li>
+    <li>Nomor kartu pasien</li>
+    <li>Nomor identitas, apabila diperlukan</li>
+    <li>Tanggal lahir</li>
+    <li>Nomor telepon</li>
+    <li>Informasi kepesertaan BPJS, apabila digunakan</li>
+    <li>Informasi rujukan atau surat kontrol, sesuai kebutuhan layanan</li>
+  </ul>
 
-      <h3>b. Data Layanan dan Kunjungan</h3>
-      <p>Kami dapat memproses data yang berkaitan dengan layanan rumah sakit, seperti:</p>
-      <ul>
-        <li>Jadwal dokter yang dipilih</li>
-        <li>Poli atau unit layanan tujuan</li>
-        <li>Tanggal kunjungan</li>
-        <li>Nomor antrean</li>
-        <li>Status antrean</li>
-        <li>E-ticket, QR code, atau barcode check-in</li>
-        <li>Riwayat janji temu yang dibuat, diubah, atau dibatalkan melalui aplikasi</li>
-      </ul>
+  <h3>Data layanan dan kunjungan</h3>
+  <ul>
+    <li>Jadwal dokter yang dipilih</li>
+    <li>Poli atau unit layanan tujuan</li>
+    <li>Tanggal kunjungan</li>
+    <li>Nomor dan status antrean</li>
+    <li>E-ticket, QR code, atau barcode check-in</li>
+    <li>Riwayat janji temu yang dibuat, diubah, atau dibatalkan melalui aplikasi</li>
+  </ul>
 
-      <h3>c. Data Perangkat dan Teknis</h3>
-      <p>Untuk menjaga keamanan dan kelancaran layanan, aplikasi dapat memproses informasi teknis seperti:</p>
-      <ul>
-        <li>Jenis perangkat</li>
-        <li>Sistem operasi</li>
-        <li>Alamat IP</li>
-        <li>Waktu akses</li>
-        <li>Log aktivitas aplikasi</li>
-        <li>Informasi error atau gangguan teknis</li>
-      </ul>
+  <h3>Data perangkat dan teknis</h3>
+  <ul>
+    <li>Jenis perangkat dan sistem operasi</li>
+    <li>Alamat IP</li>
+    <li>Waktu akses</li>
+    <li>Log aktivitas aplikasi</li>
+    <li>Informasi error atau gangguan teknis</li>
+  </ul>
 
-      <h3>d. Data Lokasi Opsional</h3>
-      <p>
-        Aplikasi dapat meminta izin lokasi secara opsional apabila pengguna ingin melihat
-        rute atau arah menuju RSUD Cideres. Data lokasi tidak digunakan apabila pengguna
-        tidak memberikan izin.
-      </p>
+  <h3>Data lokasi opsional</h3>
+  <p>
+    Aplikasi dapat meminta izin lokasi secara opsional untuk membantu pengguna
+    melihat rute menuju RSUD Cideres. Data lokasi tidak digunakan apabila pengguna
+    tidak memberikan izin.
+  </p>
 
-      <h3>e. Akses Kamera dan Penyimpanan</h3>
-      <p>Aplikasi dapat meminta izin kamera dan/atau penyimpanan untuk keperluan:</p>
-      <ul>
-        <li>Memindai QR code atau barcode</li>
-        <li>Menampilkan e-ticket</li>
-        <li>Menyimpan kartu pasien digital</li>
-        <li>Menyimpan atau membaca dokumen pendukung layanan, apabila diperlukan</li>
-      </ul>
+  <h3>Akses kamera dan penyimpanan</h3>
+  <p>
+    Aplikasi dapat meminta izin kamera dan/atau penyimpanan untuk memindai QR code
+    atau barcode, menampilkan e-ticket, menyimpan kartu pasien digital, dan mengelola
+    dokumen pendukung layanan apabila diperlukan.
+  </p>
 
-      <h2>2. Tujuan Penggunaan Data</h2>
-      <p>Data pengguna digunakan untuk tujuan berikut:</p>
-      <ul>
-        <li>Memverifikasi identitas pasien</li>
-        <li>Memastikan nomor rekam medis aktif di RSUD Cideres</li>
-        <li>Memproses pendaftaran rawat jalan</li>
-        <li>Menampilkan jadwal dokter dan kuota layanan</li>
-        <li>Mengelola antrean online secara real-time</li>
-        <li>Membuat dan menampilkan e-ticket untuk check-in</li>
-        <li>Memproses perubahan atau pembatalan janji temu</li>
-        <li>Mendukung pengurusan rujukan dan surat kontrol BPJS sesuai ketentuan yang berlaku</li>
-        <li>Mengirimkan notifikasi terkait layanan, antrean, jadwal, dan pengumuman penting</li>
-        <li>Meningkatkan keamanan, kualitas, dan stabilitas aplikasi</li>
-        <li>Memenuhi kewajiban hukum, administratif, dan regulasi yang berlaku di bidang pelayanan kesehatan</li>
-      </ul>
+  <h2>2. Tujuan Penggunaan Data</h2>
+  <ul>
+    <li>Memverifikasi identitas pasien dan nomor rekam medis</li>
+    <li>Memproses pendaftaran rawat jalan</li>
+    <li>Menampilkan jadwal dokter dan kuota layanan</li>
+    <li>Mengelola antrean online secara real-time</li>
+    <li>Membuat dan menampilkan e-ticket untuk check-in</li>
+    <li>Memproses perubahan atau pembatalan janji temu</li>
+    <li>Mendukung rujukan dan surat kontrol BPJS sesuai ketentuan</li>
+    <li>Mengirimkan notifikasi layanan dan pengumuman penting</li>
+    <li>Meningkatkan keamanan, kualitas, dan stabilitas aplikasi</li>
+    <li>Memenuhi kewajiban hukum, administratif, dan regulasi pelayanan kesehatan</li>
+  </ul>
 
-      <h2>3. Dasar Pemrosesan Data</h2>
-      <p>Pemrosesan data dilakukan berdasarkan:</p>
-      <ul>
-        <li>Persetujuan pengguna saat menggunakan aplikasi</li>
-        <li>Kebutuhan untuk menyediakan layanan rumah sakit</li>
-        <li>Kepentingan administratif dan operasional RSUD Cideres</li>
-        <li>Kewajiban hukum dan regulasi yang berlaku</li>
-        <li>Ketentuan layanan BPJS Kesehatan, apabila pengguna menggunakan layanan terkait BPJS</li>
-      </ul>
+  <h2>3. Dasar Pemrosesan Data</h2>
+  <ul>
+    <li>Persetujuan pengguna saat menggunakan aplikasi</li>
+    <li>Kebutuhan untuk menyediakan layanan rumah sakit</li>
+    <li>Kepentingan administratif dan operasional RSUD Cideres</li>
+    <li>Kewajiban hukum dan regulasi yang berlaku</li>
+    <li>Ketentuan BPJS Kesehatan, apabila pengguna memakai layanan terkait BPJS</li>
+  </ul>
 
-      <h2>4. Pembagian Data kepada Pihak Ketiga</h2>
-      <p>
-        RSUD Cideres tidak menjual data pribadi pengguna kepada pihak mana pun.
-      </p>
+  <h2>4. Pembagian Data kepada Pihak Ketiga</h2>
+  <p>
+    RSUD Cideres tidak menjual data pribadi pengguna kepada pihak mana pun.
+    Data dapat dibagikan secara terbatas hanya jika diperlukan untuk penyediaan
+    layanan atau pemenuhan kewajiban hukum.
+  </p>
 
-      <p>
-        Data pengguna dapat dibagikan secara terbatas kepada pihak yang berwenang
-        atau pihak terkait hanya apabila diperlukan, seperti:
-      </p>
+  <ul>
+    <li>Tenaga kesehatan dan unit layanan di RSUD Cideres</li>
+    <li>Sistem internal rumah sakit</li>
+    <li>BPJS Kesehatan, apabila layanan berkaitan dengan BPJS</li>
+    <li>Penyedia layanan teknologi pendukung aplikasi</li>
+    <li>Instansi pemerintah atau pihak berwenang sesuai hukum yang berlaku</li>
+  </ul>
 
-      <ul>
-        <li>Tenaga kesehatan dan unit layanan di RSUD Cideres</li>
-        <li>Sistem internal rumah sakit</li>
-        <li>BPJS Kesehatan, apabila layanan yang digunakan berkaitan dengan BPJS</li>
-        <li>Penyedia layanan teknologi yang membantu operasional aplikasi</li>
-        <li>Instansi pemerintah atau pihak berwenang sesuai ketentuan hukum yang berlaku</li>
-      </ul>
+  <h2>5. Penyimpanan dan Perlindungan Data</h2>
+  <p>
+    Kami berupaya melindungi data pengguna dengan langkah keamanan yang wajar,
+    termasuk pengamanan sistem, pembatasan akses, dan pengelolaan data sesuai
+    kebutuhan layanan.
+  </p>
 
-      <p>
-        Pembagian data dilakukan hanya sejauh diperlukan untuk penyediaan layanan
-        dan tetap memperhatikan keamanan serta kerahasiaan data pengguna.
-      </p>
+  <p>
+    Data disimpan selama diperlukan untuk memberikan layanan, menjaga riwayat
+    administrasi pelayanan kesehatan, memenuhi kewajiban hukum, dan menyelesaikan
+    permasalahan teknis, administratif, atau hukum.
+  </p>
 
-      <h2>5. Penyimpanan dan Perlindungan Data</h2>
-      <p>
-        Kami berupaya melindungi data pengguna dengan langkah-langkah keamanan
-        yang wajar, termasuk pengamanan sistem, pembatasan akses, dan pengelolaan
-        data sesuai kebutuhan layanan.
-      </p>
+  <h2>6. Hak Pengguna</h2>
+  <p>Pengguna dapat menghubungi RSUD Cideres untuk:</p>
+  <ul>
+    <li>Meminta informasi terkait penggunaan data pribadi</li>
+    <li>Memperbarui atau memperbaiki data yang tidak akurat</li>
+    <li>Menanyakan pengelolaan data dalam aplikasi</li>
+    <li>Menyampaikan keberatan atau keluhan terkait privasi</li>
+  </ul>
 
-      <p>Data pengguna disimpan selama diperlukan untuk:</p>
-      <ul>
-        <li>Memberikan layanan kepada pengguna</li>
-        <li>Menjaga riwayat administrasi layanan kesehatan</li>
-        <li>Memenuhi kewajiban hukum, regulasi, dan kebijakan rumah sakit</li>
-        <li>Menyelesaikan permasalahan teknis, administrasi, atau hukum</li>
-      </ul>
+  <h2>7. Keamanan Akun dan Perangkat</h2>
+  <p>
+    Pengguna bertanggung jawab menjaga keamanan perangkat, nomor identitas, nomor
+    rekam medis, kode akses, e-ticket, QR code, barcode, dan informasi pribadi lainnya.
+    Pengguna disarankan tidak membagikan informasi tersebut kepada pihak yang tidak
+    berkepentingan.
+  </p>
 
-      <h2>6. Hak Pengguna</h2>
-      <p>Pengguna dapat menghubungi RSUD Cideres untuk:</p>
-      <ul>
-        <li>Meminta informasi terkait penggunaan data pribadi</li>
-        <li>Memperbarui atau memperbaiki data yang tidak akurat</li>
-        <li>Menanyakan pengelolaan data dalam aplikasi</li>
-        <li>Menyampaikan keberatan atau keluhan terkait privasi</li>
-      </ul>
+  <h2>8. Layanan BPJS</h2>
+  <p>
+    Fitur terkait BPJS, termasuk rujukan dan surat kontrol, mengikuti ketentuan,
+    status kepesertaan, serta sistem yang berlaku pada BPJS Kesehatan dan RSUD Cideres.
+  </p>
 
-      <p>
-        Permintaan pengguna akan diproses sesuai prosedur rumah sakit dan ketentuan
-        hukum yang berlaku.
-      </p>
+  <h2>9. Izin Aplikasi</h2>
 
-      <h2>7. Keamanan Akun dan Perangkat</h2>
-      <p>
-        Pengguna bertanggung jawab untuk menjaga keamanan perangkat, nomor identitas,
-        nomor rekam medis, kode akses, e-ticket, QR code, barcode, dan informasi pribadi lainnya.
-      </p>
+  <h3>Kamera</h3>
+  <p>
+    Digunakan untuk memindai QR code atau barcode yang berkaitan dengan e-ticket,
+    kartu pasien, atau proses check-in.
+  </p>
 
-      <p>
-        Pengguna disarankan untuk tidak membagikan informasi pribadi atau e-ticket
-        kepada pihak yang tidak berkepentingan.
-      </p>
+  <h3>Penyimpanan</h3>
+  <p>
+    Digunakan untuk menyimpan atau mengakses e-ticket, QR code, barcode, kartu pasien
+    digital, atau dokumen yang diperlukan dalam layanan.
+  </p>
 
-      <h2>8. Layanan BPJS</h2>
-      <p>
-        Fitur yang berkaitan dengan BPJS, termasuk rujukan dan surat kontrol,
-        mengikuti ketentuan, status kepesertaan, serta sistem yang berlaku pada
-        BPJS Kesehatan dan RSUD Cideres.
-      </p>
+  <h3>Lokasi</h3>
+  <p>
+    Digunakan secara opsional untuk membantu pengguna melihat rute menuju RSUD Cideres.
+    Pengguna dapat menolak izin lokasi tanpa menghilangkan akses ke fitur utama aplikasi.
+  </p>
 
-      <p>
-        Apabila terdapat perbedaan data, kendala validasi, atau perubahan ketentuan BPJS,
-        proses layanan dapat disesuaikan dengan peraturan yang berlaku.
-      </p>
+  <h2>10. Notifikasi</h2>
+  <p>
+    Aplikasi dapat mengirimkan notifikasi terkait status antrean, jadwal kunjungan,
+    perubahan layanan, informasi rumah sakit, dan pengumuman penting. Pengguna dapat
+    mengatur izin notifikasi melalui pengaturan perangkat.
+  </p>
 
-      <h2>9. Izin Aplikasi</h2>
+  <h2>11. Tautan ke Layanan Lain</h2>
+  <p>
+    Aplikasi dapat memuat tautan atau integrasi ke layanan lain yang berkaitan dengan
+    pelayanan rumah sakit. Kebijakan Privasi ini hanya berlaku untuk aplikasi RSC Online
+    dan layanan yang dikelola RSUD Cideres.
+  </p>
 
-      <h3>Kamera</h3>
-      <p>
-        Digunakan untuk memindai QR code atau barcode yang berkaitan dengan e-ticket,
-        kartu pasien, atau proses check-in.
-      </p>
+  <h2>12. Perubahan Kebijakan Privasi</h2>
+  <p>
+    RSUD Cideres dapat memperbarui Kebijakan Privasi ini sesuai kebutuhan layanan,
+    perubahan fitur aplikasi, atau perubahan ketentuan hukum. Perubahan dapat
+    diinformasikan melalui aplikasi, website, atau media resmi RSUD Cideres.
+  </p>
 
-      <h3>Penyimpanan</h3>
-      <p>
-        Digunakan untuk menyimpan atau mengakses e-ticket, QR code, barcode,
-        kartu pasien digital, atau dokumen yang diperlukan dalam layanan.
-      </p>
+  <h2>13. Kontak</h2>
+  <div class="contact">
+    <p><strong>RSUD Cideres</strong></p>
+    <p>Call Center: <strong>(0261) 123456</strong></p>
+    <p>Email: <a href="mailto:support@rsudcideres.id">support@rsudcideres.id</a></p>
+    <p>Jam layanan: <strong>Senin–Jumat, 08.00–16.00 WIB</strong></p>
+  </div>
 
-      <h3>Lokasi</h3>
-      <p>
-        Digunakan secara opsional untuk membantu pengguna melihat rute menuju RSUD Cideres.
-        Pengguna dapat menolak izin lokasi tanpa menghilangkan akses ke fitur utama aplikasi,
-        kecuali fitur yang secara langsung membutuhkan lokasi.
-      </p>
+  <h2>14. Persetujuan Pengguna</h2>
+  <p>
+    Dengan menggunakan aplikasi RSC Online, pengguna menyatakan telah membaca dan
+    menyetujui Kebijakan Privasi ini.
+  </p>
+</article>
+```
 
-      <h2>10. Notifikasi</h2>
-      <p>Aplikasi dapat mengirimkan notifikasi terkait:</p>
-      <ul>
-        <li>Status antrean</li>
-        <li>Jadwal kunjungan</li>
-        <li>Perubahan layanan</li>
-        <li>Informasi rumah sakit</li>
-        <li>Pengumuman penting</li>
-      </ul>
-
-      <p>
-        Pengguna dapat mengatur izin notifikasi melalui pengaturan perangkat masing-masing.
-      </p>
-
-      <h2>11. Tautan ke Layanan Lain</h2>
-      <p>
-        Aplikasi dapat memuat tautan atau integrasi ke layanan lain yang berkaitan
-        dengan pelayanan rumah sakit. Kebijakan Privasi ini hanya berlaku untuk
-        aplikasi RSC Online dan layanan yang dikelola oleh RSUD Cideres.
-      </p>
-
-      <h2>12. Perubahan Kebijakan Privasi</h2>
-      <p>
-        RSUD Cideres dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu
-        sesuai kebutuhan layanan, perubahan fitur aplikasi, atau perubahan ketentuan
-        hukum yang berlaku.
-      </p>
-
-      <p>
-        Perubahan akan diinformasikan melalui aplikasi, website, atau media resmi RSUD Cideres.
-      </p>
-
-      <h2>13. Kontak</h2>
-      <div class="contact-box">
-        <p><strong>RSUD Cideres</strong></p>
-        <p>Call Center: <strong>(0261) 123456</strong></p>
-        <p>Email: <a href="mailto:support@rsudcideres.id">support@rsudcideres.id</a></p>
-        <p>Jam layanan: <strong>Senin–Jumat, 08.00–16.00 WIB</strong></p>
-      </div>
-
-      <h2>14. Persetujuan Pengguna</h2>
-      <p>
-        Dengan menggunakan aplikasi RSC Online, pengguna menyatakan telah membaca
-        dan menyetujui Kebijakan Privasi ini.
-      </p>
-    </section>
   </main>
 
   <footer>
-    &copy; 2026 RSUD Cideres. Seluruh hak cipta dilindungi.
+    © 2026 RSUD Cideres. Seluruh hak cipta dilindungi.
   </footer>
 </body>
 </html>
-```
